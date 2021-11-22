@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Seito_Login</title>
+        <meta charset="UTF-8">
+        <script>
+            function sousin(){
+                $(document).ready(function(){
+                    $.post('/',$('form').serialize())
+
+                    .fail(function(){
+                        console.log("接続エラー！");
+                    })
+                });
+            }
+            
+        </script>
+        <meta name="robots" content="noindex,nofollow">
+        <meta name="author" content="菅野優輝">
+        <meta http-equiv="content-language" content="ja">
+        <meta http-equiv="content-type" content="text/html">
+    </head>
+    <body>
+        <h2>生徒ログインページ</h2>
+        <h3>自分のIDとパスワードを入力してください。</h3>
+        <form action="/" method="post" name="Seito_Login" enctype="application/x-www-form-urlencoded" accept-charset="UTF-8">
+            <fieldset name="fsid">
+                <legend>自分のID</legend>
+                <input name="SLid" type="text" size="26" maxlength="8"
+                placeholder="IDを入力してください。" required>
+            </fieldset>
+            <fieldset name="fspass">
+                <legend>自分のパスワード</legend>
+                <input name="SLpassword" type="text" size="26" maxlength="16"
+                placeholder="パスワードを入力してください。" required>
+            </fieldset>
+            <button type="submit" onclick="sousin()">　送信　</button>
+            <button type="reset" name="reset" >　リセット　</button>
+        </form>
+        <br><a href="/Seito_Wasureta"
+            type="text/html" target="_self" hreflang="ja">
+            パスワードを忘れましたか？</a>
+    </body>
+</html>

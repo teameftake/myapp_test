@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Seito_PassChangeOT</title>
+        <meta charset="UTF-8">
+        <script>
+            function sousin(){
+                $(document).ready(function(){
+                    $.post('/Seito_PassChangeOT',$('form').serialize())
+
+                    .fail(function(){
+                        console.log('error!');
+                    })
+                });
+            }
+
+            
+        </script>
+        <meta name="robots" content="noindex,nofollow">
+        <meta name="author" content="菅野優輝">
+        <meta http-equiv="content-language" content="ja">
+        <meta http-equiv="content-type" content="text/html">
+    </head>
+    <body>
+        <h2>ワンタイムパスワード確認ページ</h2>
+        <h2><%= miss %></h2>
+        <form action="/Seito_PassChangeOT" method="post" name="Seito_PassChangeOT" enctype="application/x-www-form-urlencoded" accept-charset="UTF-8">
+            <fieldset name="fs SPCOThPass">
+                <legend>ワンタイムパスワード</legend>
+                <input name="SPCOThPass" type="text" size="38" maxlength="10"
+                placeholder="ワンタイムパスワードを入力してください。" required><br>
+            </fieldset>
+            <button type="submit" onclick="sousin()">　送信　</button>
+            <button type="reset" name="reset" >　リセット　</button>
+        </form>
+        <br>
+        <fieldset name="fs PassChangeOTR">
+            <legend>ワンタイムパスワードを再発行しますか？</legend>
+            <br><a href="/Seito_PassChangeOTR"
+            type="text/html" target="_self" hreflang="ja">
+            再発行</a>
+        </fieldset>
+            <br><a href="/Seito_PassChange"
+            type="text/html" target="_self" hreflang="ja">
+            戻る</a>
+            
+    </body>
+</html>

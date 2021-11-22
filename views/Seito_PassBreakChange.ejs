@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Seito_PassBreakChange</title>
+        <meta charset="UTF-8">
+        <script>
+            function sousin(){
+                $(document).ready(function(){
+                    $.post('/Seito_PassBreakChange',$('form').serialize())
+
+                    .fail(function(){
+                        console.log('error!');
+                    })
+                });
+            }
+            
+        </script>
+        <meta name="robots" content="noindex,nofollow">
+        <meta name="author" content="菅野優輝">
+        <meta http-equiv="content-language" content="ja">
+        <meta http-equiv="content-type" content="text/html">
+    </head>
+    <body>
+        <h2>パスワード変更ページ</h2>
+        <h2><%= miss %></h2>
+        <h3>正しいパスワードを入力してください。</h3>
+        <form action="/Seito_PassBreakChange" method="post" name="Seito_PassBreakChange" enctype="application/x-www-form-urlencoded" accept-charset="UTF-8">
+            <fieldset name="fs">
+                <legend>新しいパスワード</legend>
+                <input name="SPBChPass1" type="text" size="32" maxlength="26"
+                placeholder="新しいパスワードを入力してください。" required><br>
+                <input name="SPBChPass2" type="text" size="32" maxlength="26"
+                placeholder="もう一度入力してください。" required>
+            </fieldset>
+            <button type="submit" onclick="sousin()">　送信　</button>
+            <button type="reset" name="reset" >　リセット　</button>
+        </form>
+        <br><a href="/"
+            type="text/html" target="_self" hreflang="ja">
+            ログインページに戻る</a>
+
+
+    </body>
+</html>

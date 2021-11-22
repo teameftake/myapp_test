@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Seito_Login</title>
+        <meta charset="UTF-8">
+        <script>
+            function sousin(){
+                $(document).ready(function(){
+                    $.post('/',$('form').serialize())
+
+                    .done(function(data){
+                        console.log(data.form);
+                    })
+                });
+            }
+            
+        </script>
+        <meta name="robots" content="noindex,nofollow">
+        <meta name="author" content="菅野優輝">
+        <meta http-equiv="content-language" content="ja">
+        <meta http-equiv="content-type" content="text/html">
+    </head>
+    <body>
+        <h2>千歳寮生ログインページ</h2>
+        <h2><%= miss %></h2>
+        <h3>部屋番号とパスワードを入力してください。</h3>
+        <form action="/" method="post" name="Seito_login" enctype="application/x-www-form-urlencoded" accept-charset="UTF-8">
+            <fieldset name="fsid">
+                <legend>部屋番号</legend>
+                <input name="SLid" type="text" size="24" maxlength="5"
+                placeholder="部屋番号を入力してください。" required>
+            </fieldset>
+            <fieldset name="fspass">
+                <legend>パスワード</legend>
+                <input name="SLpassword" type="password" size="26" maxlength="26"
+                placeholder="パスワードを入力してください。" required>
+            </fieldset>
+            <button type="submit" onclick="sousin()">　送信　</button>
+            <button type="reset" name="reset" >　リセット　</button>
+        </form>
+        <br><a href="/Wasureta"
+            type="text/html" target="_self" hreflang="ja">
+            パスワードを忘れましたか？</a>
+
+
+    </body>
+</html>
